@@ -255,7 +255,7 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background: transparent;
+  background-color: transparent;
   border: 1.5px solid var(--neon);
   color: var(--neon);
   border-radius: 9999px;
