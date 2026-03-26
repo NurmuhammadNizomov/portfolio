@@ -34,18 +34,15 @@
           </p>
 
           <div ref="btnsRef" class="flex flex-wrap gap-4">
-            <NuxtLink to="/portfolio">
-              <button
-                class="px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-200"
-                :style="`background:var(--neon);color:#07090f;box-shadow:0 0 24px var(--neon-glow);`"
-              >
-                {{ $t('home.btn_portfolio') }}
-              </button>
+            <NuxtLink
+              to="/portfolio"
+              class="px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 inline-flex items-center justify-content-center no-underline"
+              :style="`background:var(--neon);color:#07090f;box-shadow:0 0 24px var(--neon-glow);`"
+            >
+              {{ $t('home.btn_portfolio') }}
             </NuxtLink>
-            <NuxtLink to="/contacts">
-              <button class="btn-neon px-8 py-3.5 text-sm font-semibold">
-                {{ $t('home.btn_order') }}
-              </button>
+            <NuxtLink to="/contacts" class="btn-neon px-8 py-3.5 text-sm font-semibold">
+              {{ $t('home.btn_order') }}
             </NuxtLink>
           </div>
 

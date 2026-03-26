@@ -18,10 +18,11 @@
         "
       >
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center gap-2 no-underline">
+        <NuxtLink to="/" class="flex items-center gap-2 no-underline" aria-label="Home">
           <div
             class="w-10 h-10 flex items-center justify-center rounded-lg"
             :style="`background:rgba(0,229,204,0.1);border:1px solid var(--border);`"
+            aria-hidden="true"
           >
             <span class="neon-text font-bold text-lg">=N</span>
           </div>
@@ -42,6 +43,8 @@
             <button
               class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all"
               :style="`border:1px solid var(--border);color:var(--text-muted);background:transparent;cursor:pointer;`"
+              :aria-label="`Language: ${currentLocaleLabel}`"
+              :aria-expanded="langOpen"
               @click="langOpen = !langOpen"
             >
               <span>{{ currentLocaleLabel }}</span>
@@ -79,6 +82,9 @@
             <button
               class="w-9 h-9 rounded-full flex items-center justify-center transition-all"
               :style="`border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--neon);`"
+              :aria-label="
+                colorMode.value !== 'light' ? 'Switch to light mode' : 'Switch to dark mode'
+              "
               @click="toggleColorMode"
             >
               <svg

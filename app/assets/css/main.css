@@ -251,6 +251,10 @@ body {
 
 /* ── Buttons ── */
 .btn-neon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   background: transparent;
   border: 1.5px solid var(--neon);
   color: var(--neon);
