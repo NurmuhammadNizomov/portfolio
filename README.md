@@ -23,7 +23,7 @@ npm run dev
 Create `.env` from `.env.example` and fill in:
 
 ```
-NUXT_PUBLIC_SITE_URL=https://nizomovnurmuhammad.uz
+NUXT_PUBLIC_SITE_URL=https://
 TELEGRAM_BOT_TOKEN=...
 TELEGRAM_CHAT_ID=...
 ```
