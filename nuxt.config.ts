@@ -35,6 +35,11 @@ export default defineNuxtConfig({
       ],
     },
   },
+  vite: {
+    optimizeDeps: {
+      include: ['gsap'],
+    },
+  },
   colorMode: {
     preference: 'system',
     fallback: 'dark',
