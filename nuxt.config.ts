@@ -8,14 +8,7 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2025-07-15',
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/eslint',
-    '@nuxt/hints',
-    '@nuxt/image',
-    'v-gsap-nuxt',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/hints', '@nuxt/image', '@nuxtjs/i18n'],
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
   app: {

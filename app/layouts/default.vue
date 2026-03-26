@@ -210,8 +210,15 @@
               rel="noopener"
               class="social-icon"
               style="width: 32px; height: 32px; font-size: 13px"
+              aria-label="Telegram"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
                 <path
                   d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.238l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.958.321z"
                 />
@@ -221,8 +228,15 @@
               href="mailto:nurmuhammadnizomov@gmail.com"
               class="social-icon"
               style="width: 32px; height: 32px"
+              aria-label="Email"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
                 <path
                   d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
                 />
@@ -231,7 +245,7 @@
           </div>
         </div>
         <div class="mt-8 pt-6 text-center" :style="`border-top:1px solid rgba(255,255,255,0.06);`">
-          <p style="font-size: 13px" :style="`color:var(--text-muted);`">
+          <p style="font-size: 14px" :style="`color:var(--text-muted);`">
             {{ $t('footer.copyright') }}
           </p>
         </div>

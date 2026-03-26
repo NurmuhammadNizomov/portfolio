@@ -9,7 +9,7 @@
   --bg-nav: rgba(10, 35, 35, 0.92);
   --text: #ffffff;
   --text-high: rgba(255, 255, 255, 0.9);
-  --text-muted: rgba(255, 255, 255, 0.55);
+  --text-muted: rgba(255, 255, 255, 0.72);
   --text-dim: rgba(255, 255, 255, 0.35);
   --border: rgba(0, 229, 204, 0.15);
   --border-card: rgba(0, 229, 204, 0.12);
@@ -32,7 +32,7 @@ html.light {
   --bg-nav: rgba(240, 248, 248, 0.94);
   --text: #0d1117;
   --text-high: rgba(13, 17, 23, 0.95);
-  --text-muted: rgba(13, 17, 23, 0.58);
+  --text-muted: rgba(13, 17, 23, 0.72);
   --text-dim: rgba(13, 17, 23, 0.38);
   --border: rgba(0, 160, 140, 0.2);
   --border-card: rgba(0, 160, 140, 0.18);
