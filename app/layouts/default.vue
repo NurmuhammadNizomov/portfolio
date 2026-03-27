@@ -7,14 +7,14 @@
     <!-- Header -->
     <header
       class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      :class="scrolled ? 'py-3 md:px-4' : 'py-5'"
+      :class="scrolled ? 'py-3' : 'py-5'"
     >
       <div
         class="nav-inner transition-all duration-500 flex items-center justify-between"
         :class="
           scrolled
-            ? 'max-w-6xl mx-auto md:rounded-2xl px-4 md:px-6 py-3 nav-scrolled'
-            : 'max-w-6xl mx-auto px-4 md:px-6'
+            ? 'max-w-6xl mx-auto rounded-2xl px-6 py-3 nav-scrolled'
+            : 'max-w-6xl mx-auto px-6'
         "
       >
         <!-- Logo -->
@@ -305,6 +305,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@media (max-width: 767px) {
+  .nav-inner.nav-scrolled {
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
 .mobile-menu-enter-active,
 .mobile-menu-leave-active {
   transition: all 0.3s ease;
