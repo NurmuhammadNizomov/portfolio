@@ -7,7 +7,7 @@
     <!-- Header -->
     <header
       class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      :class="scrolled ? 'py-3' : 'py-5'"
+      :class="scrolled ? 'py-1' : 'py-3 md:py-0'"
     >
       <div
         class="nav-inner transition-all duration-500 flex items-center justify-between"
