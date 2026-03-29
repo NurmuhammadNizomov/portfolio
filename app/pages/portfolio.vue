@@ -75,103 +75,107 @@
     </div>
 
     <!-- Modal -->
-    <Teleport to="body">
-      <Transition name="modal">
-        <div
-          v-if="selectedProject"
-          class="fixed inset-0 z-9999 flex items-center justify-center p-6"
-          style="background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(8px)"
-          @click.self="selectedProject = null"
-        >
+    <ClientOnly>
+      <Teleport to="body">
+        <Transition name="modal">
           <div
-            class="card rounded-2xl overflow-hidden max-w-2xl w-full"
-            style="border-color: rgba(0, 229, 204, 0.25)"
+            v-if="selectedProject"
+            class="fixed inset-0 z-9999 flex items-center justify-center p-6"
+            style="background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(8px)"
+            @click.self="selectedProject = null"
           >
-            <!-- iframe preview -->
             <div
-              v-if="selectedProject.liveUrl"
-              class="relative w-full"
-              style="height: 340px; background: #0d1117"
+              class="card rounded-2xl overflow-hidden max-w-2xl w-full"
+              style="border-color: rgba(0, 229, 204, 0.25)"
             >
-              <iframe
-                :src="selectedProject.liveUrl"
-                scrolling="no"
-                class="absolute top-0 left-0 border-0"
-                style="
-                  width: 1280px;
-                  height: 800px;
-                  transform: scale(0.525);
-                  transform-origin: top left;
-                "
-                loading="lazy"
-              />
-            </div>
-            <!-- fallback emoji preview -->
-            <div
-              v-else
-              class="w-full flex items-center justify-center"
-              :style="`height:180px;background:${selectedProject.bg}`"
-            >
-              <div class="text-center">
-                <div class="text-6xl mb-2">{{ selectedProject.emoji }}</div>
-                <div class="font-bold text-white">{{ selectedProject.title }}</div>
+              <!-- iframe preview -->
+              <div
+                v-if="selectedProject.liveUrl"
+                class="relative w-full"
+                style="height: 340px; background: #0d1117"
+              >
+                <iframe
+                  :src="selectedProject.liveUrl"
+                  scrolling="no"
+                  class="absolute top-0 left-0 border-0"
+                  style="
+                    width: 1280px;
+                    height: 800px;
+                    transform: scale(0.525);
+                    transform-origin: top left;
+                  "
+                  loading="lazy"
+                />
               </div>
-            </div>
-
-            <div class="p-6">
-              <div class="flex items-start justify-between mb-3">
-                <div>
-                  <p class="c-neon" style="font-size: 13px">{{ $t(selectedProject.typeKey) }}</p>
-                  <h3 class="text-2xl font-bold mt-1">{{ selectedProject.title }}</h3>
+              <!-- fallback emoji preview -->
+              <div
+                v-else
+                class="w-full flex items-center justify-center"
+                :style="`height:180px;background:${selectedProject.bg}`"
+              >
+                <div class="text-center">
+                  <div class="text-6xl mb-2">{{ selectedProject.emoji }}</div>
+                  <div class="font-bold text-white">{{ selectedProject.title }}</div>
                 </div>
-                <button
-                  class="w-8 h-8 rounded-full flex items-center justify-center c-muted"
-                  style="background: rgba(128, 128, 128, 0.1); border: none; cursor: pointer"
-                  @click="selectedProject = null"
-                >
-                  ✕
-                </button>
               </div>
-              <p class="mb-4 c-muted" style="line-height: 1.7">{{ $t(selectedProject.fullKey) }}</p>
-              <div class="flex flex-wrap gap-2 mb-5">
-                <span
-                  v-for="tag in selectedProject.tags"
-                  :key="tag"
-                  class="text-xs px-3 py-1.5 rounded-full"
-                  :style="`background:rgba(0,229,204,0.08);color:var(--neon);border:1px solid var(--border);`"
-                  >{{ tag }}</span
-                >
-              </div>
-              <div class="flex gap-3">
-                <a
-                  v-if="selectedProject.liveUrl"
-                  :href="selectedProject.liveUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-neon flex-1 text-center"
-                  >{{ $t('portfolio.view_site') }}</a
-                >
-                <a
-                  v-if="selectedProject.githubUrl"
-                  :href="selectedProject.githubUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-neon flex-1 text-center"
-                  style="background: transparent; color: var(--neon)"
-                  >GitHub →</a
-                >
-                <button
-                  v-if="!selectedProject.liveUrl && !selectedProject.githubUrl"
-                  class="btn-neon w-full text-center"
-                >
-                  {{ $t('portfolio.view_site') }}
-                </button>
+
+              <div class="p-6">
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <p class="c-neon" style="font-size: 13px">{{ $t(selectedProject.typeKey) }}</p>
+                    <h3 class="text-2xl font-bold mt-1">{{ selectedProject.title }}</h3>
+                  </div>
+                  <button
+                    class="w-8 h-8 rounded-full flex items-center justify-center c-muted"
+                    style="background: rgba(128, 128, 128, 0.1); border: none; cursor: pointer"
+                    @click="selectedProject = null"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <p class="mb-4 c-muted" style="line-height: 1.7">
+                  {{ $t(selectedProject.fullKey) }}
+                </p>
+                <div class="flex flex-wrap gap-2 mb-5">
+                  <span
+                    v-for="tag in selectedProject.tags"
+                    :key="tag"
+                    class="text-xs px-3 py-1.5 rounded-full"
+                    :style="`background:rgba(0,229,204,0.08);color:var(--neon);border:1px solid var(--border);`"
+                    >{{ tag }}</span
+                  >
+                </div>
+                <div class="flex gap-3">
+                  <a
+                    v-if="selectedProject.liveUrl"
+                    :href="selectedProject.liveUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-neon flex-1 text-center"
+                    >{{ $t('portfolio.view_site') }}</a
+                  >
+                  <a
+                    v-if="selectedProject.githubUrl"
+                    :href="selectedProject.githubUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-neon flex-1 text-center"
+                    style="background: transparent; color: var(--neon)"
+                    >GitHub →</a
+                  >
+                  <button
+                    v-if="!selectedProject.liveUrl && !selectedProject.githubUrl"
+                    class="btn-neon w-full text-center"
+                  >
+                    {{ $t('portfolio.view_site') }}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Transition>
-    </Teleport>
+        </Transition>
+      </Teleport>
+    </ClientOnly>
   </div>
 </template>
 
