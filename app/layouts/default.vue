@@ -284,23 +284,23 @@ function toggleColorMode() {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 
+const onScroll = () => {
+  scrolled.value = window.scrollY > 60
+}
+const onClickOutside = (e) => {
+  if (langMenuRef.value && !langMenuRef.value.contains(e.target)) {
+    langOpen.value = false
+  }
+}
+
 onMounted(() => {
-  const onScroll = () => {
-    scrolled.value = window.scrollY > 60
-  }
   window.addEventListener('scroll', onScroll, { passive: true })
-
-  const onClickOutside = (e) => {
-    if (langMenuRef.value && !langMenuRef.value.contains(e.target)) {
-      langOpen.value = false
-    }
-  }
   document.addEventListener('click', onClickOutside)
+})
 
-  onUnmounted(() => {
-    window.removeEventListener('scroll', onScroll)
-    document.removeEventListener('click', onClickOutside)
-  })
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+  document.removeEventListener('click', onClickOutside)
 })
 </script>
 
